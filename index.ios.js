@@ -1,16 +1,50 @@
 import React,{Component} from 'react';
-import {AppRegistry,View} from 'react-native';
+import {AppRegistry,Image,ScrollView,Text,View} from 'react-native';
 
-class FlexDimensionsBasics extends Component{
+class IScrolled extends Component{
   render(){
     return(
-      <View style={{height:300}}>
-        <View style={{flex: 1,backgroundColor: 'powderblue'}} />
-        <View style={{flex: 2,backgroundColor: 'skyblue'}} />
-        <View style={{flex: 3,backgroundColor: 'steelblue'}} />
-      </View>
-    );
+      <ScrollView>
+        <Text style={{fontSize: 96}}>Scroll me plz</Text>
+        <Image source={require('./img/1.jpg')} />
+        <Image source={require('./img/2.jpg')} />
+        <Image source={require('./img/3.jpg')} />
+        <Image source={require('./img/4.jpg')} />
+        <Image source={require('./img/5.jpg')} />
+        <Image source={require('./img/6.jpg')} />
+        <Text style={{fontSize:96}}>If you like</Text>
+        <Image source={require('./img/1.jpg')} />
+        <Image source={require('./img/2.jpg')} />
+        <Image source={require('./img/3.jpg')} />
+        <Image source={require('./img/4.jpg')} />
+        <Image source={require('./img/5.jpg')} />
+        <Image source={require('./img/6.jpg')} />
+        <Text style={{fontSize:96}}>Scrolling down</Text>
+        <Image source={require('./img/1.jpg')} />
+        <Image source={require('./img/2.jpg')} />
+        <Image source={require('./img/3.jpg')} />
+        <Image source={require('./img/4.jpg')} />
+        <Image source={require('./img/5.jpg')} />
+        <Image source={require('./img/6.jpg')} />
+        <Text style={{fontSize:96}}>What's the best</Text>
+        <Image source={require('./img/1.jpg')} />
+        <Image source={require('./img/2.jpg')} />
+        <Image source={require('./img/3.jpg')} />
+        <Image source={require('./img/4.jpg')} />
+        <Image source={require('./img/5.jpg')} />
+        <Image source={require('./img/6.jpg')} />
+        <Text style={{fontSize:96}}>Framework around?</Text>
+        <Image source={require('./img/1.jpg')} />
+        <Image source={require('./img/2.jpg')} />
+        <Image source={require('./img/3.jpg')} />
+        <Image source={require('./img/4.jpg')} />
+        <Image source={require('./img/5.jpg')} />
+        <Image source={require('./img/6.jpg')} />
+        <Text style={{fontSize:80}}>React Native</Text>
+      </ScrollView>
+    )
   }
-};
+}
 
-AppRegistry.registerComponent('reactN',() => FlexDimensionsBasics);
+
+AppRegistry.registerComponent('reactN',() => IScrolled);
