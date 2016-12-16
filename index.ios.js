@@ -1,50 +1,28 @@
 import React,{Component} from 'react';
-import {AppRegistry,Image,ScrollView,Text,View} from 'react-native';
+import { AppRegistry,ListView,Text,View } from 'react-native';
+import ScrollImg from './components/ScrollImg.js';
 
-class IScrolled extends Component{
+class ListViewBasics extends Component {
+
+  constructor(props){
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows([
+        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+      ])
+    }
+  }
+
   render(){
-    return(
-      <ScrollView>
-        <Text style={{fontSize: 96}}>Scroll me plz</Text>
-        <Image source={require('./img/1.jpg')} />
-        <Image source={require('./img/2.jpg')} />
-        <Image source={require('./img/3.jpg')} />
-        <Image source={require('./img/4.jpg')} />
-        <Image source={require('./img/5.jpg')} />
-        <Image source={require('./img/6.jpg')} />
-        <Text style={{fontSize:96}}>If you like</Text>
-        <Image source={require('./img/1.jpg')} />
-        <Image source={require('./img/2.jpg')} />
-        <Image source={require('./img/3.jpg')} />
-        <Image source={require('./img/4.jpg')} />
-        <Image source={require('./img/5.jpg')} />
-        <Image source={require('./img/6.jpg')} />
-        <Text style={{fontSize:96}}>Scrolling down</Text>
-        <Image source={require('./img/1.jpg')} />
-        <Image source={require('./img/2.jpg')} />
-        <Image source={require('./img/3.jpg')} />
-        <Image source={require('./img/4.jpg')} />
-        <Image source={require('./img/5.jpg')} />
-        <Image source={require('./img/6.jpg')} />
-        <Text style={{fontSize:96}}>What's the best</Text>
-        <Image source={require('./img/1.jpg')} />
-        <Image source={require('./img/2.jpg')} />
-        <Image source={require('./img/3.jpg')} />
-        <Image source={require('./img/4.jpg')} />
-        <Image source={require('./img/5.jpg')} />
-        <Image source={require('./img/6.jpg')} />
-        <Text style={{fontSize:96}}>Framework around?</Text>
-        <Image source={require('./img/1.jpg')} />
-        <Image source={require('./img/2.jpg')} />
-        <Image source={require('./img/3.jpg')} />
-        <Image source={require('./img/4.jpg')} />
-        <Image source={require('./img/5.jpg')} />
-        <Image source={require('./img/6.jpg')} />
-        <Text style={{fontSize:80}}>React Native</Text>
-      </ScrollView>
-    )
+    return (
+      <View>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <ScrollImg>rowData</ScrollImg>} />
+      </View>
+    );
   }
 }
 
-
-AppRegistry.registerComponent('reactN',() => IScrolled);
+AppRegistry.registerComponent('reactN',() => ListViewBasics);
